@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.output-container{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.output-box{
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
