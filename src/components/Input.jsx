@@ -14,7 +14,7 @@ const Input = () => {
     }
     var swapped;
     const ArrayItemsSwap = (arr,a,b) => {
-        var temp = arr[a];
+        let temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
         swapped = true;
@@ -22,8 +22,8 @@ const Input = () => {
 
     const handleSort = () => {
         const arr = [...inputArray];
-        var i,j;
-        var length=arr.length
+        let i,j;
+        let length=arr.length
         for (i=0;i<length;i++)
             {
             swapped = false;
