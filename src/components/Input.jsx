@@ -12,12 +12,18 @@ const Input = () => {
             return parseInt(item.trim(), 10);
             }));
     }
+    var swapped;
+    const ArrayItemsSwap = (arr,a,b) => {
+        var temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+        swapped = true;
+    }
 
     const handleSort = () => {
-        let arr = [...inputArray];
+        const arr = [...inputArray];
         var i,j;
         var length=arr.length
-        var swapped;
         for (i=0;i<length;i++)
             {
             swapped = false;
@@ -25,14 +31,11 @@ const Input = () => {
                 {
                 if(arr[j] > arr[j+1])
                     {
-                    var temp = arr[j]
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    swapped = true;
+                    ArrayItemsSwap(arr,j,j+1);
                     }
                 }
             }
-        setOutputArray(arr);
+        setOutputArray(arr);    
     }
 
 
@@ -45,7 +48,7 @@ const Input = () => {
                 onChange={handleInputChange}
                 />
             </div>< br/>
-            <button onClick={handleSort}>Sort</button> <br/>
+            <button onClick={handleSort}>Sort</button> <br />
             <div className="output-container">
             {outputArray?.map((element)=>(
                 <div className="output-box">{element}</div>
