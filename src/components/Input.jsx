@@ -6,18 +6,17 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 const Input = () => {
+  const dispatch = useDispatch();
   const [selectedOption, setSelectedOption] = useState("asc");
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value);
-    console.log(e.target.value);
   };
-
   const inputArray = useSelector((state) => state.bubble.array);
-  const dispatch = useDispatch();
   const handleInputChange = (e) => {
     const textFieldValue = e.target.value;
     const input = textFieldValue
       .split(",")
+      .filter(item => item.trim() !== '')
       .map((item) => parseInt(item.trim(), 10));
     dispatch(setInputArray(input));
   };

@@ -13,7 +13,7 @@ const Output = () => {
         <p>No.of Iterations: {count}</p>
         <div className="output-container">
             {output?.map((element,index)=>(
-                <div className="output-box" style={{height:`${element*10}px`}} key={index}>{element}</div>
+                <div className="output-box" style={{height:`${Math.sqrt(element)*10}px`}} key={index}>{element}</div>
             ))}
         </div>
 
